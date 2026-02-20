@@ -1,0 +1,262 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #42d4df, #3d8fd2);
+    color: #2a2f3a;
+    padding: 10px;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    gap: 10px;
+    overflow: hidden;
+}
+
+.title {
+    text-align: center;
+    color: #f4f8ff;
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 0;
+    text-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.container {
+    width: min(1640px, 95%);
+    margin: 0 auto;
+    display: flex;
+    gap: 12px;
+    align-items: stretch;
+    min-height: 0;
+}
+
+.form_section,
+.event_section,
+.dom_section {
+    background: #f4f4f6;
+    border-radius: 12px;
+    padding: 12px;
+    box-shadow: 0 10px 24px rgba(17, 45, 72, 0.2);
+}
+
+.form_section {
+    width: 34%;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.event_section {
+    width: 66%;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.form_section h2,
+.event_section h2,
+.dom_section h2 {
+    color: #5a74cc;
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+form label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 6px;
+}
+
+form input,
+form select,
+form textarea {
+    width: 100%;
+    margin-top: 5px;
+    padding: 7px 9px;
+    border: 2px solid #cbced6;
+    border-radius: 10px;
+    font-size: 14px;
+    background: #f7f7f8;
+}
+
+form textarea {
+    min-height: 78px;
+    height: 100%;
+    resize: none;
+}
+
+#event_form {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-height: 0;
+    height: 100%;
+    overflow: hidden;
+    padding-right: 2px;
+}
+
+#event_form label[for="event_desc"] {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+    outline: none;
+    border-color: #71a6f2;
+    box-shadow: 0 0 0 3px rgba(113, 166, 242, 0.25);
+}
+
+#event_submit,
+#clearAllBtn,
+#addSampleBtn {
+    border: 0;
+    border-radius: 10px;
+    color: #ebf8ff;
+    background: linear-gradient(90deg, #4fc2c4, #3da4d7);
+    font-size: 15px;
+    font-weight: 700;
+    min-height: 36px;
+    cursor: pointer;
+    box-shadow: 0 8px 16px rgba(41, 98, 136, 0.22);
+    transition: filter 0.2s ease, transform 0.2s ease;
+}
+
+#event_submit {
+    width: 100%;
+    margin-top: 8px;
+}
+
+.btns {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+#clearAllBtn,
+#addSampleBtn {
+    flex: 1;
+}
+
+#event_submit:hover,
+#clearAllBtn:hover,
+#addSampleBtn:hover,
+.delete_btn:hover {
+    filter: brightness(1.05);
+    transform: translateY(-1px);
+}
+
+.event_cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    align-items: start;
+    overflow: auto;
+    min-height: 0;
+    padding-right: 4px;
+}
+
+.cards {
+    background: #eef4ff;
+    border: 1px solid #d8e4ff;
+    border-left: 4px solid #6a8cff;
+    border-radius: 10px;
+    padding: 10px;
+    min-height: 120px;
+    position: relative;
+    box-shadow: 0 3px 8px rgba(20, 42, 66, 0.08);
+    overflow-wrap: anywhere;
+}
+
+.delete_btn {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    width: 24px;
+    height: 24px;
+    border: none;
+    border-radius: 50%;
+    background: #ff6f61;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: filter 0.2s ease, transform 0.2s ease;
+}
+
+.event_title {
+    font-size: 18px;
+    margin: 2px 30px 6px 0;
+    font-weight: 700;
+    color: #24324a;
+}
+
+.event_date {
+    font-size: 13px;
+    color: #566477;
+    margin-bottom: 6px;
+}
+
+.event_badge {
+    display: inline-block;
+    background: #dfe8ff;
+    color: #2f4ea3;
+    font-size: 11px;
+    border-radius: 999px;
+    padding: 2px 8px;
+    margin-bottom: 6px;
+}
+
+.event_desc {
+    font-size: 13px;
+    color: #354457;
+    line-height: 1.4;
+}
+
+.empty_state {
+    grid-column: 1 / -1;
+    text-align: center;
+    color: #8f99a8;
+    font-size: 16px;
+    padding: 16px 8px;
+}
+
+.dom_section {
+    width: min(1640px, 95%);
+    margin: 0 auto;
+}
+
+.dom_demo {
+    background: #f6f7fa;
+    border: 2px solid #d7dce5;
+    border-radius: 8px;
+    min-height: 34px;
+    padding: 8px 10px;
+    font-size: 13px;
+}
+
+.key_label {
+    font-weight: 700;
+}
+
+@media (max-width: 1200px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .form_section,
+    .event_section {
+        width: 100%;
+    }
+
+    .event_cards {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Event Dashboard</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+
+<body>
+    <h1 class="title">🎯 Smart Event Dashboard</h1>
+    <div class="container">
+        <div class="form_section">
+            <h2>Add New Event</h2>
+            <form id="event_form">
+                <label for="event_title">Event Title:
+                    <input id="event_title" type="text" required>
+                </label>
+
+                <label for="event_date">Event Date:
+                    <input id="event_date" type="date" required>
+                </label>
+
+                <label for="event_category">Category:
+                    <select id="event_category" required>
+                        <option value="Conference">Conference</option>
+                        <option value="Workshop">Workshop</option>
+                        <option value="Meetup">Meetup</option>
+                        <option value="Webinar">Webinar</option>
+                        <option value="Social">Social</option>
+                    </select>
+                </label>
+
+                <label for="event_desc">Description:
+                    <textarea id="event_desc" required></textarea>
+                </label>
+
+                <button type="submit" id="event_submit">Add Event</button>
+            </form>
+        </div>
+
+        <div class="event_section">
+            <h2>My Events</h2>
+            <div class="btns">
+                <button id="clearAllBtn">Clear All</button>
+                <button id="addSampleBtn">Add Sample Events</button>
+            </div>
+
+            <div id="event_cards" class="event_cards">
+                <div class="empty_state">No events yet. Add your first event!</div>
+            </div>
+        </div>
+    </div>
+
+    <section class="dom_section">
+        <h2>DOM Manipulation Demo</h2>
+        <div class="dom_demo">
+            <span class="key_label">Press any key to see the difference!</span>
+        </div>
+    </section>
+
+    <script src="script1.js"></script>
+</body>
+
+</html>
